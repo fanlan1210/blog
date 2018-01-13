@@ -11,7 +11,7 @@
 /* Globals */
 
 body {
-  font-family: "Noto Serif","Noto Serif CJK TC",Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
 }
 
@@ -23,7 +23,7 @@ h5, .h5,
 h6, .h6 {
   margin-top: 1em;
   margin-bottom: 15px;
-  font-family: "Noto Sans","Noto Sans CJK TC","Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -44,8 +44,8 @@ code {
   border-radius: 30px;
 }
 .btn-primary {
-  background-color: #00B16A;
-  border-color: #3FC380;
+  background-color: #428bca;
+  border-color: #337ab7;
 }
 .nav-pills>li>a {
   border-radius: 30px;
@@ -63,7 +63,7 @@ code {
  */
 
 .navbar {
-  background-color: #00B16A;
+  background-color: #428bca;
   -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
@@ -71,10 +71,10 @@ code {
 .navbar-inverse { border: 0; }
 
 .navbar-inverse .navbar-toggle {
-  border-color: #C8F7C5;
+  border-color: #cdddeb;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #C8F7C5;
+  background-color: #cdddeb;
 }
 
 .navbar-inverse .navbar-toggle:focus,
@@ -84,13 +84,13 @@ code {
 
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav>li>a {
-  color: #C8F7C5;
+  color: #cdddeb;
   font-weight: 500;
 }
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #C8F7C5;
+  border-color: #cdddeb;
 }
 
 .navbar-inverse .navbar-nav>li>a.active {
@@ -204,7 +204,7 @@ code {
   color: #333;
 }
 .article-header h1 a:hover {
-  color: #1E824C;
+  color: #23527c;
   text-decoration: none;
 }
 
@@ -283,8 +283,8 @@ code {
   margin-bottom: 30px;
 }
 #page-nav .pagination .active>* {
-  background-color: #00B16A;
-  border-color: #00B16A;
+  background-color: #428bca;
+  border-color: #428bca;
 }
 #page-nav .pagination>li:last-child>* {
   border-top-right-radius: 30px;
