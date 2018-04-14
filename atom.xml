@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fanlan&#39;s Blog</title>
+  
+  <subtitle>繁嵐的部落格</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="https://fanlan1210.github.io/blog/"/>
+  <updated>2018-04-14T09:53:41.608Z</updated>
+  <id>https://fanlan1210.github.io/blog/</id>
+  
+  <author>
+    <name>Fanlan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>樹莓派的選購與初始安裝</title>
+    <link href="https://fanlan1210.github.io/blog/2018/04/14/raspberry-pi-how-to/"/>
+    <id>https://fanlan1210.github.io/blog/2018/04/14/raspberry-pi-how-to/</id>
+    <published>2018-04-14T06:31:29.000Z</published>
+    <updated>2018-04-14T09:53:41.608Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Raspberry_Pi_3_B%2B_%2839906369025%29.png/1920px-Raspberry_Pi_3_B%2B_%2839906369025%29.png" alt="Source: Wikipedia"></a><br>樹莓派基金會在今年3月14日時，發布了Raspberry Pi 3 Model B+，主要升級了處理器和連網能力，並且支援PoE(Power over Ethernet)。</p><p>以下是我購買樹莓派和進行初始安裝的記錄。</p><a id="more"></a><h2 id="購買"><a href="#購買" class="headerlink" title="購買"></a>購買</h2><p>雖然在網路上可以找到各種賣家，但是樹莓派官方授權的生產商 element14，在世界各地有授權給當地的經銷商進行銷售，在台灣目前有一家成為它們的授權經銷商(<a href="https://ricelee.com/raspberry-pi" target="_blank" rel="noopener">台灣樹莓派，Ricelee</a>)，我個人認為這樣是買得比較安心和有保障。<br><a href="http://farnell.com/raspberrypi-consumer/approved-retailers.php?region=apac" target="_blank" rel="noopener"><img src="https://i.imgur.com/MwINiKC.png" alt="在element14官網可以看見授權經銷商列表"></a></p><p>它接受的付款方式有信用卡、匯款和paypal，由於我還只是學生，沒有信用卡和paypal，所以是用匯款付款來進行購買。</p><div class="bs-callout bs-callout-info"><h4 id="不用郵局或銀行帳戶匯款的方法"><a href="#不用郵局或銀行帳戶匯款的方法" class="headerlink" title="不用郵局或銀行帳戶匯款的方法"></a>不用郵局或銀行帳戶匯款的方法</h4><p>如果還沒有郵局或銀行帳戶(我就是)，可以到郵局拿匯款單進行填寫，這樣就能進行匯款了。</p></div><h2 id="初始安裝"><a href="#初始安裝" class="headerlink" title="初始安裝"></a>初始安裝</h2><p>取得樹莓派之後，接下來要進行初始安裝。<br>我選擇安裝NOOBS，NOOBS全名為New Out Of the Box Software，是樹莓派官方開發的一款多重開機管理程式，可以透過它內建的選單來安裝多個支援樹莓派的系統。</p><div class="bs-callout bs-callout-warning"><h4 id="Micro-SD卡"><a href="#Micro-SD卡" class="headerlink" title="Micro SD卡"></a>Micro SD卡</h4><p>在開始進行安裝前，請先確認是否達成以下條件:<br>1.建議至少有8GB的空間<br>2.格式化為FAT32檔案系統<br>3.清空裡面的所有資料</p></div><p>在<a href="https://www.raspberrypi.org/downloads/noobs" target="_blank" rel="noopener">樹莓派官網</a>提供的NOOBS有分為NOOBS和NOOBS Lite，其中的差別在於表準板內附Raspian，可離線安裝；Lite版則完全依賴網路下載系統檔來進行安裝。這裡我選擇標準版來進行安裝。</p><p>將zip檔下載完成之後，將其解壓縮進Micro SD卡內，記得要保持zip檔原有的資料結構，不能在SD卡裡新建資料夾才放進去。</p><p>接下來就可將Micro SD卡放進樹莓派裡，進行開機，如果看到選擇安裝系統的畫面(類似下圖)，就是安裝成功了。<br><a href="https://www.raspberrypi.org/documentation/installation/noobs.md" target="_blank" rel="noopener"><img src="https://www.raspberrypi.org/documentation/installation/images/noobs.png" alt="Source: Raspberry Pi"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Raspberry_Pi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Raspberry_Pi_3_B%2B_%2839906369025%29.png/1920px-Raspberry_Pi_3_B%2B_%2839906369025%29.png&quot; alt=&quot;Source: Wikipedia&quot;&gt;&lt;/a&gt;&lt;br&gt;樹莓派基金會在今年3月14日時，發布了Raspberry Pi 3 Model B+，主要升級了處理器和連網能力，並且支援PoE(Power over Ethernet)。&lt;/p&gt;
+&lt;p&gt;以下是我購買樹莓派和進行初始安裝的記錄。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://fanlan1210.github.io/blog/tags/tech/"/>
+    
+      <category term="raspberry pi" scheme="https://fanlan1210.github.io/blog/tags/raspberry-pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SITCON 2018 會後心得</title>
+    <link href="https://fanlan1210.github.io/blog/2018/03/28/Sitcon-2018-Reflection/"/>
+    <id>https://fanlan1210.github.io/blog/2018/03/28/Sitcon-2018-Reflection/</id>
+    <published>2018-03-28T10:56:54.000Z</published>
+    <updated>2018-03-28T14:22:50.512Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://flic.kr/p/25k386G" target="_blank" rel="noopener"><img src="https://farm5.staticflickr.com/4773/40909547142_fa88cfb113_z.jpg" alt="感謝SITCON紀錄組"></a></p><p>這是我第一次參加<a href="https://sitcon.org/2018" target="_blank" rel="noopener">SITCON</a>，同時也是第一次搶票，很幸運的一次就中了。<br><a id="more"></a><br>在這次的議程中，讓我覺得最有趣、實用的議程，就是「校園百寶盒」與「看你學號，return()你家住址」了。這兩個分別讓我更清楚校務系統的建置，以及資料安全的重要。</p><p>另外一個值得提到的，就是有關BBS的議程，由r2所主講，基本上我是慕名而來，因為自己剛好正在處理和BBS站有關的事務。透過這場議程，我了解了BBS從以前的News Server &amp; News Group到Current Ptt 、MapleBBS-itoc的轉變歷史，以及未來的展望。會後我也有和講師交流，並且也瞭解了對BBS經營同樣有興趣的人，期待以後能夠持續交流。</p><p>這次有個比較遺憾的地方，因為自己跑去聽比較多場議程，所以大地遊戲來不及玩完，想去的攤位來不及去，連帶知識王來不及換徽章，如果明年還能參加到SITCON，我要優先完成這些遺憾。</p><p><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fcsc241%2Fphotos%2Fa.388441568013005.1073741829.381051548752007%2F776855599171598%2F%3Ftype%3D3&width=500" width="500" height="380" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe><br><em>中部電資合照</em></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://flic.kr/p/25k386G&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4773/40909547142_fa88cfb113_z.jpg&quot; alt=&quot;感謝SITCON紀錄組&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這是我第一次參加&lt;a href=&quot;https://sitcon.org/2018&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SITCON&lt;/a&gt;，同時也是第一次搶票，很幸運的一次就中了。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://fanlan1210.github.io/blog/tags/tech/"/>
+    
+      <category term="SITCON" scheme="https://fanlan1210.github.io/blog/tags/SITCON/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo的安裝與使用</title>
+    <link href="https://fanlan1210.github.io/blog/2018/02/20/Install-Hexo-and-Use/"/>
+    <id>https://fanlan1210.github.io/blog/2018/02/20/Install-Hexo-and-Use/</id>
+    <published>2018-02-20T15:04:29.000Z</published>
+    <updated>2018-02-28T09:29:16.390Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>是基於<a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>所建構的網誌框架，也就是說，適合曾經學過JavaScript或是具有基本網頁設計基礎（HTML+CSS+JS）的人使用。<br><a href="https://hexo.io/zh-tw/docs/index.html" target="_blank" rel="noopener">Hexo的中文官方文件</a>已非常完備，可以參考看看。<br><a id="more"></a></p><h2 id="安裝前置"><a href="#安裝前置" class="headerlink" title="安裝前置"></a>安裝前置</h2><p>安裝Hexo前，需要先安裝下列套件:</p><ul><li><a href="https://git-scm.com" target="_blank" rel="noopener">Git</a></li><li><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a></li></ul><h2 id="正式安裝"><a href="#正式安裝" class="headerlink" title="正式安裝"></a>正式安裝</h2><p>在終端機輸入以下指令，安裝Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p><h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>Q:</strong> 如何將網站上傳至Github?<br><strong>A:</strong><br>要將網站上傳，得先產生靜態檔案，然後安裝並設定hexo-deployer-git<br>請參閱官方文件中<a href="https://hexo.io/zh-tw/docs/generating.html" target="_blank" rel="noopener">產生檔案</a>、<a href="https://hexo.io/zh-tw/docs/deployment.html" target="_blank" rel="noopener">佈署</a>頁面。</p><p><em>(其他待更新…)</em></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;是基於&lt;a href=&quot;https://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Node.js&lt;/a&gt;所建構的網誌框架，也就是說，適合曾經學過JavaScript或是具有基本網頁設計基礎（HTML+CSS+JS）的人使用。&lt;br&gt;&lt;a href=&quot;https://hexo.io/zh-tw/docs/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo的中文官方文件&lt;/a&gt;已非常完備，可以參考看看。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://fanlan1210.github.io/blog/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://fanlan1210.github.io/blog/2017/12/12/hello-world/"/>
+    <id>https://fanlan1210.github.io/blog/2017/12/12/hello-world/</id>
+    <published>2017-12-12T14:33:01.553Z</published>
+    <updated>2018-02-22T11:57:23.525Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
