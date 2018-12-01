@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://fanlan1210.github.io/blog/"/>
-  <updated>2018-06-16T15:56:56.973Z</updated>
+  <updated>2018-12-01T16:46:36.201Z</updated>
   <id>https://fanlan1210.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>筆記:佈署LAMP(Debian)</title>
+    <link href="https://fanlan1210.github.io/blog/2018/12/02/LAMP-Set-debian/"/>
+    <id>https://fanlan1210.github.io/blog/2018/12/02/LAMP-Set-debian/</id>
+    <published>2018-12-01T16:11:39.000Z</published>
+    <updated>2018-12-01T16:46:36.201Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LAMP-簡單解釋"><a href="#LAMP-簡單解釋" class="headerlink" title="LAMP 簡單解釋"></a>LAMP 簡單解釋</h2><p>作業系統: <strong>L</strong>inux: Debian<br>網頁伺服器: <strong>A</strong>pache HTTP Server<br>資料庫:    <strong>M</strong>ariaDB(代替MySQL)<br>程式語言: <strong>P</strong>HP</p><a id="more"></a><h2 id="開始安裝"><a href="#開始安裝" class="headerlink" title="開始安裝"></a>開始安裝</h2><h3 id="Apache-HTTP-Server"><a href="#Apache-HTTP-Server" class="headerlink" title="Apache HTTP Server"></a>Apache HTTP Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install apache2</span><br></pre></td></tr></table></figure><p>啟用常用模組(例:HTTPS支援)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo a2enmod rewrite ssl</span><br></pre></td></tr></table></figure></p><h3 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install mariadb-server</span><br></pre></td></tr></table></figure><p>進行基本設定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mysql_secure_installation</span><br></pre></td></tr></table></figure></p><h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install php libapache2-mod-php php-mysql</span><br></pre></td></tr></table></figure><h3 id="phpMyAdmin"><a href="#phpMyAdmin" class="headerlink" title="phpMyAdmin"></a>phpMyAdmin</h3><p>phpMyAdmin基於PHP，能夠幫助管理SQL資料庫<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install phpmyadmin php-mcrypt</span><br><span class="line">$ sudo phpenmod mcrypt mbstring</span><br></pre></td></tr></table></figure></p><h4 id="設定phpMyAdmin"><a href="#設定phpMyAdmin" class="headerlink" title="設定phpMyAdmin"></a>設定phpMyAdmin</h4><ul><li>在SQL資料庫內為phpMyAdmin設定權限</li></ul><p>登入 MySQL<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mysql -u root</span><br></pre></td></tr></table></figure></p><p>建立給phpMyAdmin給使用的帳號<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;phpmyadmin&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;&lt;在此輸入密碼&gt;&apos;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;phpmyadmin&apos;@&apos;localhost&apos; WITH GRANT OPTION;</span><br><span class="line">mysql&gt; exit</span><br></pre></td></tr></table></figure></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>開機時即啟動LAMP服務<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> apache2</span><br><span class="line">$ systemctl <span class="built_in">enable</span> mysql</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LAMP-簡單解釋&quot;&gt;&lt;a href=&quot;#LAMP-簡單解釋&quot; class=&quot;headerlink&quot; title=&quot;LAMP 簡單解釋&quot;&gt;&lt;/a&gt;LAMP 簡單解釋&lt;/h2&gt;&lt;p&gt;作業系統: &lt;strong&gt;L&lt;/strong&gt;inux: Debian&lt;br&gt;網頁伺服器: &lt;strong&gt;A&lt;/strong&gt;pache HTTP Server&lt;br&gt;資料庫:    &lt;strong&gt;M&lt;/strong&gt;ariaDB(代替MySQL)&lt;br&gt;程式語言: &lt;strong&gt;P&lt;/strong&gt;HP&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://fanlan1210.github.io/blog/tags/tech/"/>
+    
+      <category term="linux" scheme="https://fanlan1210.github.io/blog/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>中一中數創社成發心得</title>
