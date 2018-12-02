@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Fanlan&#39;s Blog</title>
+  <title>繁嵐的部落格</title>
   
-  <subtitle>繁嵐的部落格</subtitle>
+  <subtitle>Fanlan&#39;s Blog</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://fanlan1210.github.io/blog/"/>
@@ -10,7 +10,7 @@
   <id>https://fanlan1210.github.io/blog/</id>
   
   <author>
-    <name>Fanlan</name>
+    <name>Fanlan(繁嵐)</name>
     
   </author>
   
