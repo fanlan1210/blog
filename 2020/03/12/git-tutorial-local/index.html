@@ -3,18 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Tag: linux | 繁嵐的部落格</title>
+  <title>Git入門: 本機篇 | 繁嵐的部落格</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="科技與其日常紀錄與分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="繁嵐的部落格">
-<meta property="og:url" content="https://fanlan1210.github.io/blog/tags/linux/index.html">
+  <meta name="description" content="git 是一個版本控制軟體，我們可以使用 git 方便進行專案的管理與追蹤， 如檔案變更、紀錄等。 這篇文章將會介紹 git 的安裝與常用指令，並說明在本機端的基本操作。">
+<meta name="keywords" content="tech">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git入門: 本機篇">
+<meta property="og:url" content="https://fanlan1210.github.io/blog/2020/03/12/git-tutorial-local/index.html">
 <meta property="og:site_name" content="繁嵐的部落格">
-<meta property="og:description" content="科技與其日常紀錄與分享">
+<meta property="og:description" content="git 是一個版本控制軟體，我們可以使用 git 方便進行專案的管理與追蹤， 如檔案變更、紀錄等。 這篇文章將會介紹 git 的安裝與常用指令，並說明在本機端的基本操作。">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2020-03-12T10:56:38.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="繁嵐的部落格">
-<meta name="twitter:description" content="科技與其日常紀錄與分享">
+<meta name="twitter:title" content="Git入門: 本機篇">
+<meta name="twitter:description" content="git 是一個版本控制軟體，我們可以使用 git 方便進行專案的管理與追蹤， 如檔案變更、紀錄等。 這篇文章將會介紹 git 的安裝與常用指令，並說明在本機端的基本操作。">
   
     <link rel="alternate" href="/blog/atom.xml" title="繁嵐的部落格" type="application/atom+xml">
   
@@ -81,45 +83,96 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
+          <article id="post-git-tutorial-local" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2018/12/02/LAMP-Set-debian/">筆記:佈署LAMP(Debian)</a>
+    <h1 class="article-title" itemprop="name">
+      Git入門: 本機篇
     </h1>
   
 
 
+  </header>
+
+  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2018/12/02/LAMP-Set-debian/" class="archive-article-date"><time datetime="2018-12-01T16:11:39.000Z" itemprop="datePublished">十二月 2日</time></a>
+  <a href="/blog/2020/03/12/git-tutorial-local/" class="article-date"><time datetime="2020-03-12T09:45:23.000Z" itemprop="datePublished">2020-03-12</time></a>
 </div>
 
 <span>
-最後修改於&nbsp;<time datetime="2018-12-01T16:46:36.201Z" itemprop="dateModified">十二月 2日</time>
+最後修改於&nbsp;<time datetime="2020-03-12T10:56:38.535Z" itemprop="dateModified">2020-03-12</time>
 </span>
 
-  </header>
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git 是一個版本控制軟體，我們可以使用 git 方便進行專案的管理與追蹤， 如檔案變更、紀錄等。</p>
+<p>這篇文章將會介紹 git 的安裝與常用指令，並說明在本機端的基本操作。<br><a id="more"></a></p>
+<h2 id="安裝-git"><a href="#安裝-git" class="headerlink" title="安裝 git"></a>安裝 git</h2><p>git 的安裝很簡單，在 Linux 上可搜尋<code>git</code>套件安裝，而在 Windows 可以到 git 官網下載<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a>進行安裝。</p>
+<h2 id="開始使用-git"><a href="#開始使用-git" class="headerlink" title="開始使用 git"></a>開始使用 git</h2><h3 id="建立-repository"><a href="#建立-repository" class="headerlink" title="建立 repository"></a>建立 repository</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>Repository 中文稱為儲存庫，也可以簡稱為 repo ，用來儲存專案相關的程式碼及檔案。<br>我們可以透過<code>git init</code>來初始化一個repo。此時指令所在的資料夾，將會建立一個空的repo。</p>
+<h3 id="新增檔案到-repo"><a href="#新增檔案到-repo" class="headerlink" title="新增檔案到 repo"></a>新增檔案到 repo</h3><p>初始化 repo 完畢後，就可以開始透過<code>git add</code>指令，將資料夾內的檔案，加入至 repo 進行記錄。</p>
+<p>如果要加入一個檔案，就輸入<code>git add 檔案名稱</code>，檔案名稱必須包含副檔名。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add &lt;file name&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果要一次全部加入，則可以使用<code>--all</code>參數。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add --all</span><br></pre></td></tr></table></figure></p>
+<p>這樣就能一次將 repo 根資料夾裡的所有檔案加入。</p>
+<h3 id="進行-commit"><a href="#進行-commit" class="headerlink" title="進行 commit"></a>進行 commit</h3><p>Commit 可說是對當前儲存庫狀態的一個紀錄，當建立了 commit ， git 就會把目前 repo 內所有的變動給存到該次 commit。<br>輸入<code>git commit</code>指令即可進到建立 commit 的編輯介面，對本次commit進行說明與註解。<br>如果是安裝 git 後，第一次進行 commit ，則 git 將會詢問要使用哪個文字編輯器(預設為vi)。<br>如果要跳過編輯介面直接進行 commit ，則可以輸入:<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit -m &lt;message&gt;</span><br></pre></td></tr></table></figure></p>
+<p>這樣即可直接建立commit並加上訊息註解。</p>
+<h3 id="修改檔案後"><a href="#修改檔案後" class="headerlink" title="修改檔案後"></a>修改檔案後</h3><p>如果之後程式碼、檔案、資料夾等等，有任何變動，則需要再用<code>git add</code>指令將變動更新至 repo ，並且加上 commit 做紀錄。</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://fanlan1210.github.io/blog/2020/03/12/git-tutorial-local/" data-id="ck7omhgam000u8cv83svd6mie" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="https://fanlan1210.github.io/blog/2020/03/12/git-tutorial-local/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tech/">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/blog/2018/12/02/LAMP-Set-debian/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">筆記:佈署LAMP(Debian)</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
 </article>
 
-  
-  
-    </div></section>
-  
 
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
 
 
@@ -207,11 +260,13 @@
 <script>
   var disqus_shortname = 'fanlan1210';
   
+  var disqus_url = 'https://fanlan1210.github.io/blog/2020/03/12/git-tutorial-local/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
