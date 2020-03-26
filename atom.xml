@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://fanlan1210.github.io/blog/"/>
-  <updated>2020-03-12T10:56:38.535Z</updated>
+  <updated>2020-03-26T10:32:51.534Z</updated>
   <id>https://fanlan1210.github.io/blog/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Git入門: 遠端互動篇</title>
+    <link href="https://fanlan1210.github.io/blog/2020/03/26/git-tutorial-remote/"/>
+    <id>https://fanlan1210.github.io/blog/2020/03/26/git-tutorial-remote/</id>
+    <published>2020-03-26T10:00:00.000Z</published>
+    <updated>2020-03-26T10:32:51.534Z</updated>
+    
+    <content type="html"><![CDATA[<p>這篇文章將接續<a href="/blog/2020/03/12/git-tutorial-local/" title="上次在本機端的教學">上次在本機端的教學</a>，介紹接下來與遠端儲存庫的互動，包含遠端站點的設定、推送與接收資料。</p><a id="more"></a><h2 id="設定遠端儲存庫"><a href="#設定遠端儲存庫" class="headerlink" title="設定遠端儲存庫"></a>設定遠端儲存庫</h2><h3 id="新增遠端儲存庫"><a href="#新增遠端儲存庫" class="headerlink" title="新增遠端儲存庫"></a>新增遠端儲存庫</h3><p>在與遠端進行任何互動之前，我們得先將遠端儲存庫的連結位置，加進本機的儲存庫，這樣才能順利地進行後續操作。</p><p>要新增一個遠端儲存庫，可以透過<code>git remote</code>中的<code>add</code>指令，語法如下:<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;repo-link&gt;</span><br></pre></td></tr></table></figure></p><p>新增完畢後，透過<code>-v</code>參數即可查詢目前新增的情形:<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></p><h3 id="另-從遠端儲存庫複製"><a href="#另-從遠端儲存庫複製" class="headerlink" title="另: 從遠端儲存庫複製"></a>另: 從遠端儲存庫複製</h3><p>如果已經在遠端主機上建立了 repo (例如: Github)，則可以使用<code>git clone</code>指令，將其複製下來:<br><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">&lt;repo-link</span>&gt;</span><br></pre></td></tr></table></figure></p><p>此時如果查詢本機上的遠端儲存庫，則可以發現有名為 <em>origin</em> 的遠端 repo ，且連結到剛剛複製的遠端主機。</p><h2 id="與遠端儲存庫的互動"><a href="#與遠端儲存庫的互動" class="headerlink" title="與遠端儲存庫的互動"></a>與遠端儲存庫的互動</h2><h3 id="Push-更新資料至遠端"><a href="#Push-更新資料至遠端" class="headerlink" title="Push : 更新資料至遠端"></a>Push : 更新資料至遠端</h3><p>當我們在本機 repo 進行了 commit 後，便可以將其透過<code>git push</code>這項指令來上傳至遠端，字面上有推上去的感覺。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push &lt;remote-name&gt;</span><br></pre></td></tr></table></figure></p><p><em>remote-name</em>即是遠端儲存庫的名稱，預設為 <em>origin</em> 。<br><!--而*branch-name*則是分支名稱，我們可以在同一個 repo 內建立許多不同的版本分支，而預設名稱為 *master* ，有主分支之意。--></p><p>所以預設的 push 指令看起來會是這樣:<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p><h3 id="Pull-從遠端獲取新資料"><a href="#Pull-從遠端獲取新資料" class="headerlink" title="Pull : 從遠端獲取新資料"></a>Pull : 從遠端獲取新資料</h3><p>如果遠端 repo 有更新，而本機 repo 仍然在舊版本時，即可使用<code>git pull</code>來把遠端上的資料拉過來本機進行更新。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git pull &lt;remote-name&gt; --rebase</span><br></pre></td></tr></table></figure></p><p>基本上指令類似於<code>git push</code>，而加上<code>--rebase</code>參數，可以省去 pull 後會多出一個 commit 紀錄的情形。</p><h3 id="備註"><a href="#備註" class="headerlink" title="備註"></a>備註</h3><p>上述動作皆是在<strong>預設不發生衝突</strong>的情況下進行，如果本機或遠端的 repo 有同時改動到相同地方，則可能產生<strong>衝突</strong>，這部分的處理會比較麻煩一些，所以就不在入門文章細述。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這篇文章將接續&lt;a href=&quot;/blog/2020/03/12/git-tutorial-local/&quot; title=&quot;上次在本機端的教學&quot;&gt;上次在本機端的教學&lt;/a&gt;，介紹接下來與遠端儲存庫的互動，包含遠端站點的設定、推送與接收資料。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tech" scheme="https://fanlan1210.github.io/blog/tags/tech/"/>
+    
+      <category term="git" scheme="https://fanlan1210.github.io/blog/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git入門: 本機篇</title>
     <link href="https://fanlan1210.github.io/blog/2020/03/12/git-tutorial-local/"/>
     <id>https://fanlan1210.github.io/blog/2020/03/12/git-tutorial-local/</id>
     <published>2020-03-12T09:45:23.000Z</published>
-    <updated>2020-03-12T10:56:38.535Z</updated>
+    <updated>2020-03-26T09:55:31.728Z</updated>
     
-    <content type="html"><![CDATA[<p>git 是一個版本控制軟體，我們可以使用 git 方便進行專案的管理與追蹤， 如檔案變更、紀錄等。</p><p>這篇文章將會介紹 git 的安裝與常用指令，並說明在本機端的基本操作。<br><a id="more"></a></p><h2 id="安裝-git"><a href="#安裝-git" class="headerlink" title="安裝 git"></a>安裝 git</h2><p>git 的安裝很簡單，在 Linux 上可搜尋<code>git</code>套件安裝，而在 Windows 可以到 git 官網下載<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a>進行安裝。</p><h2 id="開始使用-git"><a href="#開始使用-git" class="headerlink" title="開始使用 git"></a>開始使用 git</h2><h3 id="建立-repository"><a href="#建立-repository" class="headerlink" title="建立 repository"></a>建立 repository</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>Repository 中文稱為儲存庫，也可以簡稱為 repo ，用來儲存專案相關的程式碼及檔案。<br>我們可以透過<code>git init</code>來初始化一個repo。此時指令所在的資料夾，將會建立一個空的repo。</p><h3 id="新增檔案到-repo"><a href="#新增檔案到-repo" class="headerlink" title="新增檔案到 repo"></a>新增檔案到 repo</h3><p>初始化 repo 完畢後，就可以開始透過<code>git add</code>指令，將資料夾內的檔案，加入至 repo 進行記錄。</p><p>如果要加入一個檔案，就輸入<code>git add 檔案名稱</code>，檔案名稱必須包含副檔名。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add &lt;file name&gt;</span><br></pre></td></tr></table></figure></p><p>如果要一次全部加入，則可以使用<code>--all</code>參數。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add --all</span><br></pre></td></tr></table></figure></p><p>這樣就能一次將 repo 根資料夾裡的所有檔案加入。</p><h3 id="進行-commit"><a href="#進行-commit" class="headerlink" title="進行 commit"></a>進行 commit</h3><p>Commit 可說是對當前儲存庫狀態的一個紀錄，當建立了 commit ， git 就會把目前 repo 內所有的變動給存到該次 commit。<br>輸入<code>git commit</code>指令即可進到建立 commit 的編輯介面，對本次commit進行說明與註解。<br>如果是安裝 git 後，第一次進行 commit ，則 git 將會詢問要使用哪個文字編輯器(預設為vi)。<br>如果要跳過編輯介面直接進行 commit ，則可以輸入:<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit -m &lt;message&gt;</span><br></pre></td></tr></table></figure></p><p>這樣即可直接建立commit並加上訊息註解。</p><h3 id="修改檔案後"><a href="#修改檔案後" class="headerlink" title="修改檔案後"></a>修改檔案後</h3><p>如果之後程式碼、檔案、資料夾等等，有任何變動，則需要再用<code>git add</code>指令將變動更新至 repo ，並且加上 commit 做紀錄。</p>]]></content>
+    <content type="html"><![CDATA[<p>git 是一個版本控制軟體，我們可以使用 git 方便進行專案的管理與追蹤， 如檔案變更、紀錄等。</p><p>這篇文章將會介紹 git 的安裝與常用指令，並說明在本機端的基本操作。<br><a id="more"></a></p><h2 id="安裝-git"><a href="#安裝-git" class="headerlink" title="安裝 git"></a>安裝 git</h2><p>git 的安裝很簡單，在 Linux 上可搜尋<code>git</code>套件安裝，而在 Windows 可以到 git 官網下載 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git for Windows</a> 進行安裝。</p><h2 id="開始使用-git"><a href="#開始使用-git" class="headerlink" title="開始使用 git"></a>開始使用 git</h2><h3 id="建立-repository"><a href="#建立-repository" class="headerlink" title="建立 repository"></a>建立 repository</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>Repository 中文稱為儲存庫，也可以簡稱為 repo ，用來儲存專案相關的程式碼及檔案。<br>我們可以透過<code>git init</code>來初始化一個repo。此時指令所在的資料夾，將會建立一個空的repo。</p><h3 id="新增檔案到-repo"><a href="#新增檔案到-repo" class="headerlink" title="新增檔案到 repo"></a>新增檔案到 repo</h3><p>初始化 repo 完畢後，就可以開始透過<code>git add</code>指令，將資料夾內的檔案，加入至 repo 進行記錄。</p><p>如果要加入一個檔案，就輸入<code>git add 檔案名稱</code>，檔案名稱必須包含副檔名。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add &lt;file name&gt;</span><br></pre></td></tr></table></figure></p><p>如果要一次全部加入，則可以使用<code>--all</code>參數。<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add --all</span><br></pre></td></tr></table></figure></p><p>這樣就能一次將 repo 根資料夾裡的所有檔案加入。</p><h3 id="進行-commit"><a href="#進行-commit" class="headerlink" title="進行 commit"></a>進行 commit</h3><p>Commit 可說是對當前儲存庫狀態的一個紀錄，當建立了 commit ， git 就會把目前 repo 內所有的變動給存到該次 commit。</p><p>輸入<code>git commit</code>指令即可進到建立 commit 的編輯介面，對本次 commit 進行說明與註解。<br>如果是安裝 git 後，第一次進行 commit ，則 git 將會詢問要使用哪個文字編輯器(預設為vi)。<br>如果要跳過編輯介面直接進行 commit ，則可以輸入:<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit -m &lt;message&gt;</span><br></pre></td></tr></table></figure></p><p>這樣即可直接建立 commit 並加上訊息註解。</p><h3 id="修改檔案後"><a href="#修改檔案後" class="headerlink" title="修改檔案後"></a>修改檔案後</h3><p>如果之後程式碼、檔案、資料夾等等，有任何變動，則需要再用<code>git add</code>指令將變動更新至 repo ，並且加上 commit 做紀錄。</p>]]></content>
     
     <summary type="html">
     
@@ -34,6 +56,8 @@
     
     
       <category term="tech" scheme="https://fanlan1210.github.io/blog/tags/tech/"/>
+    
+      <category term="git" scheme="https://fanlan1210.github.io/blog/tags/git/"/>
     
   </entry>
   

@@ -3,20 +3,18 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Hexo的安裝與使用 | 繁嵐的部落格</title>
+  <title>Tag: git | 繁嵐的部落格</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo是基於Node.js所建構的網誌框架，也就是說，適合曾經學過JavaScript或是具有基本網頁設計基礎（HTML+CSS+JS）的人使用。Hexo的中文官方文件已非常完備，可以參考看看。">
-<meta name="keywords" content="tech">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo的安裝與使用">
-<meta property="og:url" content="https://fanlan1210.github.io/blog/2018/02/20/Install-Hexo-and-Use/index.html">
+  <meta name="description" content="科技與其日常紀錄與分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="繁嵐的部落格">
+<meta property="og:url" content="https://fanlan1210.github.io/blog/tags/git/index.html">
 <meta property="og:site_name" content="繁嵐的部落格">
-<meta property="og:description" content="Hexo是基於Node.js所建構的網誌框架，也就是說，適合曾經學過JavaScript或是具有基本網頁設計基礎（HTML+CSS+JS）的人使用。Hexo的中文官方文件已非常完備，可以參考看看。">
+<meta property="og:description" content="科技與其日常紀錄與分享">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-02-28T09:29:16.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo的安裝與使用">
-<meta name="twitter:description" content="Hexo是基於Node.js所建構的網誌框架，也就是說，適合曾經學過JavaScript或是具有基本網頁設計基礎（HTML+CSS+JS）的人使用。Hexo的中文官方文件已非常完備，可以參考看看。">
+<meta name="twitter:title" content="繁嵐的部落格">
+<meta name="twitter:description" content="科技與其日常紀錄與分享">
   
     <link rel="alternate" href="/blog/atom.xml" title="繁嵐的部落格" type="application/atom+xml">
   
@@ -83,100 +81,69 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-Install-Hexo-and-Use" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
+          
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <header class="archive-article-header">
     
   
-    <h1 class="article-title" itemprop="name">
-      Hexo的安裝與使用
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2020/03/26/git-tutorial-remote/">Git入門: 遠端互動篇</a>
     </h1>
   
 
 
-  </header>
-
-  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2018/02/20/Install-Hexo-and-Use/" class="article-date"><time datetime="2018-02-20T15:04:29.000Z" itemprop="datePublished">2018-02-20</time></a>
+  <a href="/blog/2020/03/26/git-tutorial-remote/" class="archive-article-date"><time datetime="2020-03-26T10:00:00.000Z" itemprop="datePublished">三月 26日</time></a>
 </div>
 
 <span>
-最後修改於&nbsp;<time datetime="2018-02-28T09:29:16.390Z" itemprop="dateModified">2018-02-28</time>
+最後修改於&nbsp;<time datetime="2020-03-26T10:32:51.534Z" itemprop="dateModified">三月 26日</time>
 </span>
 
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>是基於<a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>所建構的網誌框架，也就是說，適合曾經學過JavaScript或是具有基本網頁設計基礎（HTML+CSS+JS）的人使用。<br><a href="https://hexo.io/zh-tw/docs/index.html" target="_blank" rel="noopener">Hexo的中文官方文件</a>已非常完備，可以參考看看。<br><a id="more"></a></p>
-<h2 id="安裝前置"><a href="#安裝前置" class="headerlink" title="安裝前置"></a>安裝前置</h2><p>安裝Hexo前，需要先安裝下列套件:</p>
-<ul>
-<li><a href="https://git-scm.com" target="_blank" rel="noopener">Git</a></li>
-<li><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a></li>
-</ul>
-<h2 id="正式安裝"><a href="#正式安裝" class="headerlink" title="正式安裝"></a>正式安裝</h2><p>在終端機輸入以下指令，安裝Hexo<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>Q:</strong> 如何將網站上傳至Github?<br><strong>A:</strong><br>要將網站上傳，得先產生靜態檔案，然後安裝並設定hexo-deployer-git<br>請參閱官方文件中<a href="https://hexo.io/zh-tw/docs/generating.html" target="_blank" rel="noopener">產生檔案</a>、<a href="https://hexo.io/zh-tw/docs/deployment.html" target="_blank" rel="noopener">佈署</a>頁面。</p>
-<p><em>(其他待更新…)</em></p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="https://fanlan1210.github.io/blog/2018/02/20/Install-Hexo-and-Use/" data-id="ck88knef70000wwv8kb5kuobi" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-        <a href="https://fanlan1210.github.io/blog/2018/02/20/Install-Hexo-and-Use/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tech/">tech</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  <li role="presentation">
-    <a href="/blog/2017/12/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">Hello World</span>
-    </a>
-  </li>
-  
-  
-  <li role="presentation">
-    <a href="/blog/2018/03/28/Sitcon-2018-Reflection/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">SITCON 2018 會後心得</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
-  
-</ul>
-
-
-  
+  </header>
 </article>
 
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <header class="archive-article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2020/03/12/git-tutorial-local/">Git入門: 本機篇</a>
+    </h1>
+  
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+
+    <div class="article-datetime">
+  <a href="/blog/2020/03/12/git-tutorial-local/" class="archive-article-date"><time datetime="2020-03-12T09:45:23.000Z" itemprop="datePublished">三月 12日</time></a>
+</div>
+
+<span>
+最後修改於&nbsp;<time datetime="2020-03-26T09:55:31.728Z" itemprop="dateModified">三月 26日</time>
+</span>
+
+  </header>
+</article>
+
+  
+  
+    </div></section>
+  
+
 
 
 
@@ -264,13 +231,11 @@
 <script>
   var disqus_shortname = 'fanlan1210';
   
-  var disqus_url = 'https://fanlan1210.github.io/blog/2018/02/20/Install-Hexo-and-Use/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
