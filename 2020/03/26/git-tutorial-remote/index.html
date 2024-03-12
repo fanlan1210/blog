@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git入門: 遠端互動篇 | 繁嵐的部落格</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="這篇文章將接續上次在本機端的教學，介紹接下來與遠端儲存庫的互動，包含遠端站點的設定、推送與接收資料。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git入門: 遠端互動篇">
+<meta property="og:url" content="https://blog.fanlan.net/2020/03/26/git-tutorial-remote/index.html">
+<meta property="og:site_name" content="繁嵐的部落格">
+<meta property="og:description" content="這篇文章將接續上次在本機端的教學，介紹接下來與遠端儲存庫的互動，包含遠端站點的設定、推送與接收資料。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-03-26T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-12T10:59:20.281Z">
+<meta property="article:author" content="Fanlan(繁嵐)">
+<meta property="article:tag" content="tech">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="繁嵐的部落格" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">繁嵐的部落格</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-git-tutorial-remote" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Git入門: 遠端互動篇
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2020/03/26/git-tutorial-remote/" class="article-date"><time datetime="2020-03-26T10:00:00.000Z" itemprop="datePublished">2020-03-26</time></a>
+</div>
+
+<span>
+最後修改於&nbsp;<time datetime="2024-03-12T10:59:20.281Z" itemprop="dateModified">2024-03-12</time>
+</span>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這篇文章將接續<a href="/2020/03/12/git-tutorial-local/" title="Git入門: 本機篇">上次在本機端的教學</a>，介紹接下來與遠端儲存庫的互動，包含遠端站點的設定、推送與接收資料。</p>
+<span id="more"></span>
+
+<h2 id="設定遠端儲存庫"><a href="#設定遠端儲存庫" class="headerlink" title="設定遠端儲存庫"></a>設定遠端儲存庫</h2><h3 id="新增遠端儲存庫"><a href="#新增遠端儲存庫" class="headerlink" title="新增遠端儲存庫"></a>新增遠端儲存庫</h3><p>在與遠端進行任何互動之前，我們得先將遠端儲存庫的連結位置，加進本機的儲存庫，這樣才能順利地進行後續操作。</p>
+<p>要新增一個遠端儲存庫，可以透過<code>git remote</code>中的<code>add</code>指令，語法如下:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;repo-link&gt;</span><br></pre></td></tr></table></figure>
+<p>新增完畢後，透過<code>-v</code>參數即可查詢目前新增的情形:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="另-從遠端儲存庫複製"><a href="#另-從遠端儲存庫複製" class="headerlink" title="另: 從遠端儲存庫複製"></a>另: 從遠端儲存庫複製</h3><p>如果已經在遠端主機上建立了 repo (例如: Github)，則可以使用<code>git clone</code>指令，將其複製下來:</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">&lt;repo-link</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>此時如果查詢本機上的遠端儲存庫，則可以發現有名為 <em>origin</em> 的遠端 repo ，且連結到剛剛複製的遠端主機。</p>
+<h2 id="與遠端儲存庫的互動"><a href="#與遠端儲存庫的互動" class="headerlink" title="與遠端儲存庫的互動"></a>與遠端儲存庫的互動</h2><h3 id="Push-更新資料至遠端"><a href="#Push-更新資料至遠端" class="headerlink" title="Push : 更新資料至遠端"></a>Push : 更新資料至遠端</h3><p>當我們在本機 repo 進行了 commit 後，便可以將其透過<code>git push</code>這項指令來上傳至遠端，字面上有推上去的感覺。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push &lt;remote-name&gt;</span><br></pre></td></tr></table></figure>
+<p><em>remote-name</em>即是遠端儲存庫的名稱，預設為 <em>origin</em> 。</p>
+<!--而*branch-name*則是分支名稱，我們可以在同一個 repo 內建立許多不同的版本分支，而預設名稱為 *master* ，有主分支之意。-->
+
+<p>所以預設的 push 指令看起來會是這樣:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pull-從遠端獲取新資料"><a href="#Pull-從遠端獲取新資料" class="headerlink" title="Pull : 從遠端獲取新資料"></a>Pull : 從遠端獲取新資料</h3><p>如果遠端 repo 有更新，而本機 repo 仍然在舊版本時，即可使用<code>git pull</code>來把遠端上的資料拉過來本機進行更新。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git pull &lt;remote-name&gt; --rebase</span><br></pre></td></tr></table></figure>
+<p>基本上指令類似於<code>git push</code>，而加上<code>--rebase</code>參數，可以省去 pull 後會多出一個 commit 紀錄的情形。</p>
+<h3 id="備註"><a href="#備註" class="headerlink" title="備註"></a>備註</h3><p>上述動作皆是在<strong>預設不發生衝突</strong>的情況下進行，如果本機或遠端的 repo 有同時改動到相同地方，則可能產生<strong>衝突</strong>，這部分的處理會比較麻煩一些，所以就不在入門文章細述。</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://blog.fanlan.net/2020/03/26/git-tutorial-remote/" data-id="cltonk1b7000bviu37neify2c" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="https://blog.fanlan.net/2020/03/26/git-tutorial-remote/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/" rel="tag">tech</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2020/03/12/git-tutorial-local/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Git入門: 本機篇</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2022/03/26/after-two-years/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">日常：兩年過後</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <h4>繁嵐</h4> <p>默默關注、討論社會議題，期望資訊科技能夠用以輔助社會，同時也在各種資訊社群打滾貢獻著。</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/SITCON/" rel="tag">SITCON</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/git/" rel="tag">git</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/linux/" rel="tag">linux</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/raspberry-pi/" rel="tag">raspberry pi</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/tech/" rel="tag">tech</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/%E9%9B%BB%E8%B3%87/" rel="tag">電資</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/SITCON/" style="font-size: 10px;">SITCON</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/raspberry-pi/" style="font-size: 15px;">raspberry pi</a> <a href="/tags/tech/" style="font-size: 20px;">tech</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E9%9B%BB%E8%B3%87/" style="font-size: 15px;">電資</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2024/03/">三月 2024</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/03/">三月 2022</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">三月 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">十二月 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">六月 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/04/">四月 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">三月 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">二月 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2024/03/12/my-new-raspberry-pi-5/">樹莓派第五代開箱</a>
+        </li>
+      
+        <li>
+          <a href="/2022/03/26/after-two-years/">日常：兩年過後</a>
+        </li>
+      
+        <li>
+          <a href="/2020/03/26/git-tutorial-remote/">Git入門: 遠端互動篇</a>
+        </li>
+      
+        <li>
+          <a href="/2020/03/12/git-tutorial-local/">Git入門: 本機篇</a>
+        </li>
+      
+        <li>
+          <a href="/2018/12/02/LAMP-Set-debian/">筆記:佈署LAMP(Debian)</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2024 Fanlan(繁嵐)<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+<script>
+  var disqus_shortname = 'fanlan1210';
+  
+  var disqus_url = 'https://blog.fanlan.net/2020/03/26/git-tutorial-remote/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
